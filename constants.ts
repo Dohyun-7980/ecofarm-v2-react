@@ -1,0 +1,123 @@
+import type { Greenhouse } from './types';
+
+export const MOCK_GREENHOUSES: Greenhouse[] = [
+  {
+    id: 'gh1',
+    name: '토마토 온실 1',
+    plantingDate: '2024-05-15',
+    sensorData: {
+      temp: 24.5,
+      rootTemp: 22.1,
+      humidity: 65,
+      dewPoint: 16.8,
+      vpd: 1.1,
+      co2: 450,
+      isDay: true,
+      wetBulbTemp: 19.8,
+    },
+    controlState: {
+      activeMode: 'auto',
+      manualSettings: {
+        fan: false,
+        circulation_fan: true,
+        mist: false,
+        dehumidifier: false,
+        heater: false,
+      },
+      useExpertSettings: false,
+      autoSubType: 'stable',
+      jojoGaonRules: [
+        { id: 'jojo1', timeBeforeSunrise: 2, targetTemp: 18 },
+      ],
+    },
+    devices: {
+      fan: '배기 팬',
+      circulation_fan: '순환 팬',
+      mist: '미스트 시스템',
+      dehumidifier: '제습기',
+      heater: '난방기',
+    },
+    expertSettings: {
+      day: { temp_min: 20, temp_max: 26, temp_diff_min: 3.0, temp_diff_max: 5.0 },
+      night: { temp_min: 16, temp_max: 18, temp_diff_min: 2.5, temp_diff_max: 4.0 },
+    },
+  },
+  {
+    id: 'gh2',
+    name: '오이 온실 2',
+    plantingDate: '2024-06-01',
+    sensorData: {
+      temp: 26.1,
+      rootTemp: 23.5,
+      humidity: 72,
+      dewPoint: 20.2,
+      vpd: 0.9,
+      co2: 500,
+      isDay: true,
+      wetBulbTemp: 22.3,
+    },
+    controlState: {
+      activeMode: 'manual',
+      manualSettings: {
+        fan: true,
+        circulation_fan: false,
+        mist: true,
+        dehumidifier: false,
+        heater: false,
+        led_light: true,
+      },
+      useExpertSettings: true,
+      autoSubType: 'stable',
+      jojoGaonRules: [],
+    },
+    devices: {
+      fan: '배기 팬',
+      circulation_fan: '순환 팬',
+      mist: '미스트 시스템',
+      dehumidifier: '제습기',
+      heater: '난방기',
+      led_light: 'LED 성장등',
+    },
+    expertSettings: {
+      day: { temp_min: 22, temp_max: 28, temp_diff_min: 2.0, temp_diff_max: 4.0 },
+      night: { temp_min: 18, temp_max: 20, temp_diff_min: 1.5, temp_diff_max: 3.0 },
+    },
+  },
+  {
+    id: 'gh3',
+    name: '딸기 연구동',
+    plantingDate: '2024-04-20',
+    sensorData: {
+      temp: 17.5,
+      rootTemp: 16.0,
+      humidity: 55,
+      dewPoint: 8.3,
+      vpd: 1.0,
+      co2: 400,
+      isDay: false,
+      wetBulbTemp: 12.8,
+    },
+    controlState: {
+      activeMode: 'auto',
+      manualSettings: {
+        fan: false,
+        circulation_fan: true,
+        mist: false,
+        dehumidifier: false,
+        heater: true,
+      },
+      useExpertSettings: false,
+      autoSubType: 'ml_optimization',
+      jojoGaonRules: [],
+    },
+    devices: {
+      fan: '배기 팬',
+      circulation_fan: '순환 팬',
+      heater: '난방기',
+    },
+    expertSettings: {
+      day: { temp_min: 20, temp_max: 24, temp_diff_min: 4.0, temp_diff_max: 6.0 },
+      night: { temp_min: 15, temp_max: 17, temp_diff_min: 3.0, temp_diff_max: 5.0 },
+    },
+  },
+];
